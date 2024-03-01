@@ -3,8 +3,9 @@ import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
 const ImageSearchPage = async ({ searchParams }) => {
+  const startIndex = searchParams.start || '1';
   const res = await fetch(
-    `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_SEARCH_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image`
+    `https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_SEARCH_API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`
   );
   if (!res.ok) throw new Error("Something went wrong");
   const data = await res.json();
