@@ -1,3 +1,4 @@
+import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
 const WebSearchPage = async ({ searchParams }) => {
@@ -10,10 +11,10 @@ const WebSearchPage = async ({ searchParams }) => {
   if (!results) {
     return (
       <div className="flex flex-col justify-center items-center pt-10">
-        <h1 className="text-3xl mb-4">
+        <h1 className="sm:text-3xl mb-4">
           No results found for "{searchParams.searchTerm}"
         </h1>
-        <p className="text-lg">
+        <p className="sm:text-lg">
           Try searching the web or image for something else{" "}
           <Link href={"/"} className="text-blue-500">
             Home
@@ -23,7 +24,7 @@ const WebSearchPage = async ({ searchParams }) => {
     );
   }
   return (
-    <div>{results && results.map((result) => <h1>{result.title}</h1>)}</div>
+    <div>{results && <WebSearchResults results={data}/>}</div>
   );
 };
 
