@@ -16,7 +16,7 @@ const CountryLookup = () => {
               console.log(error.message);
             }
         }
-        getCountry();
+        // getCountry();
   },[]);
 
   return (
