@@ -17,6 +17,7 @@ const SearchHeader = () => {
             style={{ width: "auto" }}
             width={120}
             height={40}
+            className="hidden sm:inline-block"
           />
         </Link>
         <div className='flex-1'>
