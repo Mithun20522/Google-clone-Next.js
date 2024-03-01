@@ -14,7 +14,7 @@ const WebSearchPage = async ({ searchParams }) => {
     return (
       <div className="flex flex-col justify-center items-center pt-10">
         <h1 className="sm:text-3xl mb-4">
-          No results found for "{searchParams.searchTerm}"
+          No results found for {searchParams.searchTerm}
         </h1>
         <p className="sm:text-lg">
           Try searching the web or image for something else{" "}
