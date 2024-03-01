@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Parser from 'html-react-parser'
 import Pagination from './Pagination'
 
@@ -25,7 +25,10 @@ const WebSearchResults = ({results}) => {
                 </div>
             ))
         }
-        <Pagination/>
+        <Suspense>
+            <Pagination/>
+        </Suspense>
+        
     </div>
   )
 }

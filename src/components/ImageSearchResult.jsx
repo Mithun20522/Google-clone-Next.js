@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { Suspense } from 'react'
 import Pagination from './Pagination'
 
 const ImageSearchResult = ({results}) => {
@@ -24,7 +24,10 @@ const ImageSearchResult = ({results}) => {
           ))}
       </div>
       <div className='ml-16'>
-        <Pagination/>
+        <Suspense>
+          <Pagination/>
+        </Suspense>
+        
       </div>
     </div>
   )
